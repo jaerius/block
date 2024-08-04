@@ -5,8 +5,13 @@ export default class BlockChainAddLink {
   constructor() {
     const genesisBlock = new BlockHash("hello");
     this.chain = [genesisBlock];
+    this.previousHash;
   }
 
   // TODO: 새로운 블록을 추가하기 전에 이전 블록의 해시값을 previousHash에 추가해주세요.
-  addBlock() {}
+  addBlock(block) {
+    const currentBlockHash = this.chain[this.chain.length - 1].toHash();
+    block.previousHash = currentBlockHash;
+    this.chain.push(block);
+  }
 }

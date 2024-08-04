@@ -7,5 +7,7 @@ export default class BlockChainAdd {
   }
 
   // TODO: 제네시스 블록의 뒤에 새로운 블록이 오도록 함수를 작성해주세요.
-  addBlock(block) {}
+  addBlock(block) {
+    this.chain.push(block);
+  }
 }
